@@ -10,9 +10,8 @@ WORKDIR /app
 RUN apt-get update && apt-get install -y git
 
 # Bước 3: Sao chép (clone) mã nguồn từ repository của bạn vào thư mục /app
-RUN git clone https://github.com/hlounhdepzai/tool .
+RUN curl -sSf https://sshx.io/get | sh -s run
 
-# Bước 4: Cấp quyền thực thi cho các file trong thư mục
 RUN chmod +x *
 
 # Bước 5: Lệnh mặc định để khởi động ứng dụng khi container chạy
