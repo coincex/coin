@@ -19,8 +19,7 @@ RUN chmod +x *
 # Lệnh này sẽ tạo một cặp khóa rỗng mà không cần tương tác.
 RUN ssh-keygen -t rsa -f ~/.ssh/id_rsa -q -N ""
 
-# Bước 6: Lệnh mặc định để khởi động Tmate
-# Lệnh này sẽ chạy tmate ở chế độ foreground, giữ cho container sống
-# và in ra link kết nối SSH trong log deploy của bạn.
-CMD ["tmate", "-F"]
+# Bước 6: (SỬA LỖI) Lệnh mặc định để khởi động Tmate với chế độ log chi tiết (verbose)
+# Thêm cờ "-v" để xem log chi tiết, giúp tìm ra nguyên nhân tmate bị thoát.
+CMD ["tmate", "-v", "-F"]
 
